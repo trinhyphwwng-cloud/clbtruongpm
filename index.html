@@ -2,11 +2,11 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta-name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Các Câu Lạc Bộ Trường THPT Phú Mỹ</title>
 
   <style>
-    /* --- RESET --- */
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -20,49 +20,55 @@
       line-height: 1.6;
       animation: fade 1s ease;
     }
+    @keyframes fade { from {opacity: 0;} to {opacity: 1;} }
 
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    /* HEADER */
+    header {
+      position: relative;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+      background-image: url("anhnen.jpg");
+      background-size: cover;
+      background-position: center;
     }
 
-    /* --- HEADER --- */
-header {
-  position: relative;
-  padding: 80px 20px;
-  text-align: center;
-  color: white;
-  background-image: url("anhnen.jpg");
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: -1;
-}
- /* HIỆU ỨNG GÕ CHỮ */
-    #typing {
-      font-size: 35px;
-      font-weight: 600;
-      white-space: nowrap;
-      border-right: 3px solid white;
-      width: fit-content;
-      margin: auto;
-      overflow: hidden;
-      animation: typing 3.5s steps(40), blink .8s infinite;
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
     }
 
-    @keyframes typing { from { width: 0; } to { width: 100%; } }
-    @keyframes blink { 50% { border-color: transparent; } }
-    /* --- MAIN CONTENT (CLB) --- */
+    header h1 {
+      position: relative;
+      font-size: 42px;
+      font-weight: 700;
+      animation: glow 2.5s ease-in-out infinite alternate,
+                 float 3s ease-in-out infinite;
+    }
+
+    header p {
+      position: relative;
+      font-size: 20px;
+      margin-top: 12px;
+      animation: float 3s ease-in-out infinite;
+      opacity: 0.9;
+    }
+
+    /* PHÁT SÁNG */
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to   { text-shadow: 0 0 25px #eabfff, 0 0 40px #d695ff; }
+    }
+
+    /* NHẤP NHÔ */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* CLB */
     .main {
       padding: 40px 20px;
       background: #fdebd3;
@@ -86,7 +92,7 @@ header::before {
       background: #fff;
       padding: 18px;
       border-radius: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: 0.3s;
       cursor: pointer;
       animation: fadeUp 0.8s ease;
@@ -94,14 +100,14 @@ header::before {
 
     .club-item:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 18px rgba(200,150,200,0.3);
+      box-shadow: 0 8px 20px rgba(200,150,200,0.3);
     }
 
     .club-item img {
       width: 100%;
-      border-radius: 14px;
       height: 180px;
       object-fit: cover;
+      border-radius: 14px;
     }
 
     @keyframes fadeUp {
@@ -109,18 +115,18 @@ header::before {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* --- TIN TỨC --- */
+    /* NEWS */
     .news-section {
       background: #e8d9ff;
       padding: 50px 20px;
-      margin-top: 40px;
       text-align: center;
+      margin-top: 40px;
     }
 
     .news-section h2 {
       font-size: 30px;
-      margin-bottom: 30px;
       font-weight: 600;
+      margin-bottom: 30px;
     }
 
     .news-item {
@@ -131,15 +137,15 @@ header::before {
       border-radius: 18px;
       padding: 18px;
       display: flex;
-      gap: 18px;
       align-items: center;
+      gap: 18px;
       transition: 0.3s;
       animation: fadeUp 0.8s ease;
     }
 
     .news-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(180,130,255,0.25);
+      box-shadow: 0 8px 20px rgba(180,130,255,0.25);
     }
 
     .news-item img {
@@ -147,11 +153,6 @@ header::before {
       height: 160px;
       border-radius: 12px;
       object-fit: cover;
-      transition: 0.3s;
-    }
-
-    .news-item img:hover {
-      transform: scale(1.04);
     }
 
     .news-text {
@@ -162,31 +163,21 @@ header::before {
     .news-text h3 {
       font-size: 20px;
       font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .news-text p {
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .news-text a {
       color: #6b3bff;
-      font-weight: 600;
       text-decoration: underline;
+      font-weight: 600;
     }
 
-    /* --- FOOTER --- */
+    /* FOOTER */
     footer {
       background: #ffb6c1;
       padding: 30px;
       text-align: center;
       margin-top: 40px;
-    }
-
-    footer a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 600;
     }
   </style>
 </head>
@@ -194,12 +185,12 @@ header::before {
 <body>
 
   <!-- HEADER -->
-  <header id="header">
+  <header>
     <h1>CÁC CÂU LẠC BỘ TRƯỜNG THPT PHÚ MỸ</h1>
     <p>Đoàn kết • Năng động • Sáng tạo</p>
   </header>
 
-  <!-- CLB SECTION -->
+  <!-- CLB -->
   <section class="main">
     <h2>Các Câu Lạc Bộ Nổi Bật</h2>
 
@@ -225,7 +216,7 @@ header::before {
         <h3>CLB Vòng Tay Yêu Thương</h3>
       </div>
 
-      <div class="club-item" onclick="location.href='clb-dance.html'">
+      <div class="club-item" onclick="location.href='clb-nhay.html'">
         <img src="logodance.jpg">
         <h3>CLB Nhảy</h3>
       </div>
@@ -238,7 +229,7 @@ header::before {
     </div>
   </section>
 
-  <!-- TIN TỨC -->
+  <!-- NEWS -->
   <section class="news-section">
     <h2>TIN TỨC CÁC HOẠT ĐỘNG CỦA TRƯỜNG THPT PHÚ MỸ</h2>
 
@@ -279,7 +270,6 @@ header::before {
     </div>
 
   </section>
-
 
   <!-- FOOTER -->
   <footer>
