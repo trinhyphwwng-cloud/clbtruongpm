@@ -8,9 +8,10 @@
     body {
         margin: 0;
         font-family: Poppins, sans-serif;
-        background: #FFF9EB;
+        background: #FFF9EB; 
     }
 
+    /* ===== HEADER có glow + float ===== */
     header {
         background: #FFE0B2;
         padding: 25px;
@@ -19,6 +20,13 @@
         font-weight: bold;
         border-bottom: 4px solid #E0A05A;
         color: #C07A2F;
+
+        animation: glow 2.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from { box-shadow: 0 0 8px #F5D3A4; }
+        to   { box-shadow: 0 0 22px #FFE3C4; }
     }
 
     .container {
@@ -27,18 +35,19 @@
         padding: 25px 0;
     }
 
+    /* ===== INTRO – đậm hơn nền ===== */
     .intro {
-        background: #FFF4B8;
+        background: #FFE8C4;
         padding: 20px;
         border-radius: 14px;
-        border: 2px solid #FFE0B2;
+        border: 3px solid #FFDAA0;
         font-size: 18px;
         line-height: 1.6;
         color: #8A5A22;
     }
 
     h2 {
-        margin-top: 30px;
+        margin-top: 35px;
         color: #C07A2F;
     }
 
@@ -46,28 +55,33 @@
     .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-        margin-top: 15px;
+        gap: 22px;
+        margin-top: 20px;
     }
 
     .gallery-item {
         position: relative;
         overflow: hidden;
         border-radius: 14px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.16);
     }
 
     .gallery-item img {
         width: 100%;
-        height: 200px;
+        height: 230px;
         object-fit: cover;
         display: block;
+        transition: 0.35s;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
     }
 
     .overlay {
         position: absolute;
         inset: 0;
-        background: rgba(192, 122, 47, 0.85); /* vàng nâu pastel đậm */
+        background: rgba(192, 122, 47, 0.88); 
         color: white;
         display: flex;
         align-items: center;
@@ -85,24 +99,31 @@
         opacity: 1;
     }
 
-    /* ===== BUTTON ===== */
+    /* ===== BUTTON (giống 2 trang kia) ===== */
     .btn {
         display: inline-block;
-        padding: 12px 22px;
-        margin-top: 25px;
+        padding: 13px 28px;
+        margin-top: 30px;
         background: #E0A05A;
         color: white;
         font-weight: 600;
         text-decoration: none;
         border-radius: 10px;
-        transition: 0.3s;
+        transition: 0.35s;
+        animation: float 2.6s ease-in-out infinite;
     }
 
     .btn:hover {
         background: #CF8A42;
-        transform: scale(1.05);
+        transform: scale(1.06);
     }
 
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+
+    /* ===== FOOTER ===== */
     footer {
         background: #FFE0B2;
         padding: 15px;
@@ -116,14 +137,15 @@
 
 <body>
 
-<header>CLB ÂM NHẠC - LAN TỎA CẢM XÚC QUA ÂM THANH</header>
+<header>CLB ÂM NHẠC – LAN TỎA CẢM XÚC QUA ÂM THANH</header>
 
 <div class="container">
 
     <div class="intro">
-        🎵 CLB Âm Nhạc là mái nhà chung của những tâm hồn yêu nghệ thuật, nơi bạn có thể thỏa sức hát,
-        chơi nhạc cụ và sáng tạo theo cách riêng của mình. CLB thường xuyên tham gia các cuộc thi lớn nhỏ,
-        tổ chức biểu diễn giao lưu và các hoạt động thiện nguyện ý nghĩa.
+        🎵 CLB Âm Nhạc là mái nhà chung của những tâm hồn yêu nghệ thuật.  
+        Tại đây, bạn có thể thỏa sức hát, chơi nhạc cụ, biểu diễn và sáng tạo theo cách riêng của mình.  
+        CLB thường xuyên tham gia các cuộc thi lớn nhỏ, giao lưu văn nghệ, biểu diễn sự kiện
+        và tổ chức nhiều hoạt động thiện nguyện mang ý nghĩa lan tỏa yêu thương.
     </div>
 
     <h2>📸 Hình ảnh hoạt động</h2>
@@ -133,35 +155,35 @@
         <div class="gallery-item">
             <img src="music1.jpg">
             <div class="overlay">
-                🎤 Tham gia phong trào "Giờ ra chơi không sử dụng điện thoại" – tổ chức hát cùng nhau dưới sân
+                🎤 Hát tập thể trong chương trình "Giờ ra chơi không sử dụng điện thoại"
             </div>
         </div>
 
         <div class="gallery-item">
             <img src="music2.jpg">
             <div class="overlay">
-                🎼 Biểu diễn các ca khúc phù hợp lứa tuổi học sinh trong lễ chào cờ
+                🎼 Trình diễn các ca khúc tuổi học trò trong lễ chào cờ
             </div>
         </div>
 
         <div class="gallery-item">
             <img src="music3.jpg">
             <div class="overlay">
-                🌸 Vòng bán kết Liên hoan các đội nhóm tuyên truyền ca khúc cách mạng 2024 – “Bài ca đi cùng năm tháng”
+                🌸 Bán kết Liên hoan các đội nhóm tuyên truyền ca khúc cách mạng 2024
             </div>
         </div>
 
         <div class="gallery-item">
             <img src="music4.jpg">
             <div class="overlay">
-                💛 Hợp tác cùng CLB Vòng tay yêu thương – tổ chức đêm nhạc gây quỹ giúp các hoàn cảnh khó khăn
+                💛 Đêm nhạc gây quỹ cùng CLB Vòng Tay Yêu Thương
             </div>
         </div>
 
         <div class="gallery-item">
             <img src="music5.jpg">
             <div class="overlay">
-                🎶 Thường xuyên tổ chức các buổi giao lưu văn nghệ trong và ngoài trường
+                🎶 Giao lưu văn nghệ định kỳ trong và ngoài trường
             </div>
         </div>
 
