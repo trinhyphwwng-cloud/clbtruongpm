@@ -6,7 +6,6 @@
   <title>Các Câu Lạc Bộ Trường THPT Phú Mỹ</title>
 
   <style>
-    /* -------- RESET -------- */
     * {
       margin: 0;
       padding: 0;
@@ -20,31 +19,28 @@
       line-height: 1.6;
     }
 
-    /* -------- HEADER -------- */
-header {
-  position: relative;
-  padding: 80px 20px;
-  text-align: center;
-  color: white;
-  background-image: url("anhnen.jpg");
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-}
+    header {
+      position: relative;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+      background-image: url("anhnen.jpg");
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
 
-/* Lớp tối phủ hình nền */
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* độ tối */
-  z-index: -1;
-}
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: -1;
+    }
 
-    /* -------- MAIN CONTENT -------- */
     .main {
       padding: 40px 20px;
       background: #fdebd3;
@@ -80,12 +76,10 @@ header::before {
     }
 
     .club-item img {
-      width: auto;
-      height: auto;
-      max-width: 100%; 
+      width: 100%;
       border-radius: 14px;
       object-fit: cover;
-}
+    }
 
     .club-item h3 {
       margin-top: 12px;
@@ -93,82 +87,159 @@ header::before {
       font-weight: 600;
     }
 
-    /* -------- FOOTER -------- */
+    /* Tin tức */
+    .news-section {
+      background: #e8e4ff;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
+
+    .news-section h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 25px;
+      width: 90%;
+      margin: auto;
+    }
+
+    .news-item {
+      background: white;
+      border-radius: 14px;
+      display: flex;
+      padding: 12px;
+      gap: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .news-item img {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .news-content h4 {
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .news-content p {
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    .news-content a {
+      color: #5a4dff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
     footer {
       background: #ffb6c1;
       padding: 30px;
       text-align: center;
       margin-top: 40px;
     }
-
-    footer a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer p {
-      margin: 8px 0;
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
   <header id="header">
     <h1>CÁC CÂU LẠC BỘ TRƯỜNG THPT PHÚ MỸ</h1>
     <p>Đoàn kết • Năng động • Sáng tạo</p>
   </header>
 
-
-  <!-- ===== MAIN CONTENT ===== -->
   <section class="main">
     <h2>Các Câu Lạc Bộ Nổi Bật</h2>
 
     <div class="club-grid">
       <div class="club-item" onclick="location.href='clb-covua.html'">
-        <img src="logocovua.jpg" alt="CLB Cờ Vua" />
+        <img src="logocovua.jpg" />
         <h3>CLB Cờ Vua</h3>
       </div>
 
       <div class="club-item" onclick="location.href='clb-bongro.html'">
-        <img src="logobongro.jpg" alt="CLB Bóng Rổ" />
+        <img src="logobongro.jpg" />
         <h3>CLB Bóng Rổ</h3>
       </div>
 
       <div class="club-item" onclick="location.href='clb-amnhac.html'">
-        <img src="logomusic.jpg" alt="CLB Âm Nhạc" />
+        <img src="logomusic.jpg" />
         <h3>CLB Âm Nhạc</h3>
       </div>
 
       <div class="club-item" onclick="location.href='clb-yeuthuong.html'">
-        <img src="logoyeuthuong.jpg" alt="CLB Vòng Tay Yêu Thương" />
+        <img src="logoyeuthuong.jpg" />
         <h3>CLB Vòng Tay Yêu Thương</h3>
+      </div>
+
+      <div class="club-item" onclick="location.href='clb-dance.html'">
+        <img src="logodance.jpg" />
+        <h3>CLB Nhảy</h3>
+      </div>
+
+      <div class="club-item" onclick="location.href='clb-art.html'">
+        <img src="logoart.jpg" />
+        <h3>CLB Vẽ</h3>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="bg-gray-100 text-gray-700 py-6 mt-10">
-    <div class="container mx-auto text-center">
-      <p class="font-semibold">
-        <a href="https://www.facebook.com/THPTPhuMy" target="_blank" class="text-blue-600 underline">
-          Page chính thức Trường THPT Phú Mỹ
-        </a>
-      </p>
-      <p>Địa chỉ: Đường Trường Chinh, Phường Phú Mỹ, Thành phố Hồ Chí Minh</p>
-      <p class="mt-2">Hotline:</p>
-      <p>0908.632.312 (Thầy Lê Trần Anh Tuấn - Phó Hiệu Trưởng)</p>
-      <p>0985.519.456 (Thầy Hoàng Đức Duệ - Trợ Lí Đoàn Thanh Niên)</p>
-    </div>
-  </footer>
+  <section class="news-section">
+    <h2>Tin Tức Các Hoạt Động Trường THPT Phú Mỹ</h2>
 
-  <script>
-    function setHeaderBackground(url) {
-      document.getElementById('header').style.backgroundImage = `url('${url}')`;
-    }
-  </script>
+    <div class="news-grid">
+
+      <div class="news-item">
+        <img src="tt1.jpg" />
+        <div class="news-content">
+          <h4>Học sinh THPT PM tham dự kì thi hùng biện tiếng Nhật</h4>
+          <p>Học sinh nhà trường tự tin tranh tài cùng nhiều đơn vị khác trong sân chơi học thuật do Sở GD-ĐT TP.HCM tổ chức.</p>
+          <a href="https://www.facebook.com/share/p/1B4gA3QDTm/" target="_blank">Xem thêm</a>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <img src="tt2.jpg" />
+        <div class="news-content">
+          <h4>Học sinh THPT PM tham dự hội trại truyền thống cụm</h4>
+          <p>Các bạn học sinh đã có một ngày trải nghiệm đầy năng lượng, giao lưu và học hỏi với các trường bạn.</p>
+          <a href="https://www.facebook.com/share/p/182MgsDym6/" target="_blank">Xem thêm</a>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <img src="tt3.jpg" />
+        <div class="news-content">
+          <h4>Học sinh THPT PM tham dự ngày hội HS với ý tưởng khởi nghiệp</h4>
+          <p>Học sinh hào hứng trình bày ý tưởng sáng tạo, tiếp cận mô hình khởi nghiệp trẻ đầy triển vọng.</p>
+          <a href="https://www.facebook.com/share/p/16ogDbirV8/" target="_blank">Xem thêm</a>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <img src="tt4.jpg" />
+        <div class="news-content">
+          <h4>Hội thi Thể dục Thể thao THPT Phú Mỹ</h4>
+          <p>Sân chơi rèn luyện sức khỏe và tinh thần đoàn kết, thu hút đông đảo học sinh tham gia.</p>
+          <a href="https://www.facebook.com/share/p/16ogDbirV8/" target="_blank">Xem thêm</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p><a href="https://www.facebook.com/THPTPhuMy">Page chính thức Trường THPT Phú Mỹ</a></p>
+    <p>Địa chỉ: Đường Trường Chinh, Phường Phú Mỹ, TP. HCM</p>
+  </footer>
 
 </body>
 </html>
