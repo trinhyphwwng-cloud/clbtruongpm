@@ -5,20 +5,31 @@
 <title>CLB Nhảy – THPT Phú Mỹ</title>
 
 <style>
+    /* ===== PALETTE ROSE RED ===== */
+    :root {
+        --bg-light: #FFE3E8;      /* nền trang */
+        --bg-box: #FFD3DA;        /* nền khung */
+        --border-rose: #F5A8B3;   /* viền pastel */
+        --rose: #E56A78;          /* nút & điểm nhấn */
+        --rose-dark: #C94A59;     /* đậm */
+        --wine: #8A2C3A;          /* chữ đậm */
+    }
+
     body {
         margin: 0;
         font-family: Poppins, sans-serif;
-        background: #FFC8CE;
+        background: var(--bg-light);
     }
 
     header {
-        background: #FFBCC2;
+        background: var(--rose);
         padding: 25px;
         text-align: center;
         font-size: 32px;
         font-weight: bold;
-        border-bottom: 4px solid #D26F70;
-        color: #982B3A;
+        border-bottom: 4px solid var(--rose-dark);
+        color: white;
+        text-shadow: 0 2px 3px rgba(0,0,0,0.15);
     }
 
     .container {
@@ -27,19 +38,20 @@
         padding: 25px 0;
     }
 
+    /* ===== INTRO BOX ===== */
     .intro {
-        background: #FFC8CE;
+        background: var(--bg-box);
         padding: 20px;
         border-radius: 14px;
-        border: 2px solid #FFBCC2;
+        border: 2px solid var(--border-rose);
         font-size: 18px;
         line-height: 1.6;
-        color: #661A1A;
+        color: var(--wine);
     }
 
     h2 {
         margin-top: 35px;
-        color: #982B3A;
+        color: var(--rose-dark);
     }
 
     /* ===== VIDEO FACEBOOK ===== */
@@ -47,31 +59,32 @@
         margin-top: 20px;
         border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-        border: 3px solid #FFBCC2;
+        border: 3px solid var(--border-rose);
+        background: var(--bg-box);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
 
     .fb-video-box iframe {
         width: 100%;
-        height: 240px;
+        height: 260px;
         border: none;
     }
 
-    /* chữ hướng dẫn */
+    /* ===== NOTES ===== */
     .video-note,
     .image-note {
         margin-top: 10px;
         text-align: center;
         font-size: 16px;
         font-weight: 600;
-        color: #982B3A;
-        background: #FFC8CE;
+        color: var(--rose-dark);
+        background: var(--bg-box);
         padding: 8px 12px;
         border-radius: 10px;
-        border: 2px dashed #FFBCC2;
+        border: 2px dashed var(--border-rose);
     }
 
-    /* ===== GALLERY ẢNH ===== */
+    /* ===== GALLERY ===== */
     .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -83,6 +96,8 @@
         position: relative;
         overflow: hidden;
         border-radius: 14px;
+        background: var(--bg-box);
+        border: 2px solid var(--border-rose);
         box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
 
@@ -96,7 +111,7 @@
     .overlay {
         position: absolute;
         inset: 0;
-        background: rgba(200, 76, 85, 0.85); /* đỏ pastel đậm */
+        background: rgba(233, 110, 130, 0.88); /* rose red đậm */
         color: white;
         display: flex;
         align-items: center;
@@ -119,7 +134,7 @@
         display: inline-block;
         padding: 12px 22px;
         margin-top: 25px;
-        background: #C84C55;
+        background: var(--rose-dark);
         color: white;
         font-weight: 600;
         text-decoration: none;
@@ -128,20 +143,21 @@
     }
 
     .btn:hover {
-        background: #A93D46;
+        background: var(--rose);
         transform: scale(1.05);
     }
 
     footer {
-        background: #FFBCC2;
+        background: var(--rose);
         padding: 15px;
         text-align: center;
         margin-top: 30px;
-        border-top: 3px solid #D26F70;
-        color: #862224;
+        border-top: 3px solid var(--rose-dark);
+        color: white;
     }
 </style>
 </head>
+
 <body>
 
 <header>CLB NHẢY – BÙNG CHÁY ĐAM MÊ, LAN TỎA NĂNG LƯỢNG</header>
@@ -150,67 +166,55 @@
 
     <div class="intro">
         💃 CLB Nhảy là nơi hội tụ của những bạn trẻ yêu chuyển động và đam mê âm nhạc.
-        Các thành viên được học nhiều thể loại nhảy, rèn luyện sự tự tin và tham gia biểu diễn
-        trong các sự kiện lớn nhỏ của trường.
+        Các thành viên được học nhiều thể loại nhảy hiện đại – dân gian – hiphop – kpop,
+        đồng thời rèn luyện sự tự tin, kỹ năng biểu diễn và tinh thần đồng đội.
     </div>
 
     <h2>🎬 Video hoạt động</h2>
 
     <div class="fb-video-box">
         <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/1FrTRwWr2r/&show_text=false"
+            src="https://www.facebook.com/share/v/1Aj7zVojro/"
             allowfullscreen="true"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
         </iframe>
     </div>
 
     <h2>📸 Hình ảnh hoạt động</h2>
-    <div class="image-note">
-        👆 Bấm vào ảnh để xem thông tin
-    </div>
+    <div class="image-note">👆 Bấm vào ảnh để xem thông tin</div>
 
     <div class="gallery">
 
         <div class="gallery-item">
             <img src="dance1.jpg">
-            <div class="overlay">
-                ✨ Luyện tập nhóm – tinh thần đồng đội CLB Nhảy
-            </div>
+            <div class="overlay">✨ Luyện tập nhóm – tinh thần đồng đội CLB Nhảy</div>
         </div>
 
         <div class="gallery-item">
             <img src="dance2.jpg">
-            <div class="overlay">
-                ✨ Biểu diễn ca khúc mang âm hưởng dân gian - Bắc Bling 
-            </div>
+            <div class="overlay">✨ Biểu diễn tiết mục dân gian hiện đại – Bắc Bling</div>
         </div>
 
         <div class="gallery-item">
             <img src="dance3.jpg">
-            <div class="overlay">
-                ✨ Hưởng ứng phong trào "Giờ ra chơi không điện thoại" - Tổ chức random dance
-            </div>
+            <div class="overlay">✨ Random dance – hưởng ứng phong trào “Giờ ra chơi không điện thoại”</div>
         </div>
 
         <div class="gallery-item">
             <img src="dance4.jpg">
-            <div class="overlay">
-                ✨ Biểu diễn các ca khúc Hiphop - cover Kpop dance
-            </div>
+            <div class="overlay">✨ Biểu diễn Hiphop – cover Kpop dance</div>
         </div>
 
         <div class="gallery-item">
             <img src="dance5.jpg">
-            <div class="overlay">
-                ✨ Đạt giải Ba cuộc thi Vũng Tàu Best Dance
-            </div>
+            <div class="overlay">✨ Giải Ba cuộc thi “Vũng Tàu Best Dance”</div>
         </div>
 
     </div>
 
     <a class="btn" href="https://www.facebook.com/share/1JoSPHbZSw/?mibextid=wwXIfr" target="_blank">📌 Đăng ký tham gia</a>
     <br><br>
-    <a class="btn" style="background:#982B3A" href="index.html">⬅ Quay về trang chính</a>
+    <a class="btn" style="background:var(--wine)" href="index.html">⬅ Quay về trang chính</a>
 
 </div>
 
