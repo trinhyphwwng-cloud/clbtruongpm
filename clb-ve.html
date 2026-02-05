@@ -8,17 +8,26 @@
     body {
         margin: 0;
         font-family: Poppins, sans-serif;
-        background: #F6F0FF; /* tím pastel rất nhạt */
+        background: #F6F0FF; /* nền rất nhạt */
     }
 
+    /* ===== HEADER ===== */
     header {
-        background: #E8D9FF;
+        background: #EAD9FF;
         padding: 25px;
         text-align: center;
         font-size: 32px;
         font-weight: bold;
-        border-bottom: 4px solid #B69AD9;
-        color: #6A4E93;
+        border-bottom: 4px solid #C0A2EA;
+        color: #6D4A9E;
+
+        animation: glow 2.8s ease-in-out infinite alternate;
+    }
+
+    /* hiệu ứng sáng nhẹ */
+    @keyframes glow {
+        from { box-shadow: 0 0 8px #C9B3F5; }
+        to   { box-shadow: 0 0 22px #D6C4FF; }
     }
 
     .container {
@@ -27,11 +36,12 @@
         padding: 25px 0;
     }
 
+    /* ===== INTRO ===== */
     .intro {
         background: #F1E6FF;
         padding: 20px;
         border-radius: 14px;
-        border: 2px solid #E8D9FF;
+        border: 3px solid #E0CEFF; /* giống CLB Nhảy (viền dày hơn nền) */
         font-size: 18px;
         line-height: 1.6;
         color: #5A3D7A;
@@ -42,10 +52,11 @@
         color: #6A4E93;
     }
 
+    /* ===== GALLERY ===== */
     .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
+        gap: 22px;
         margin-top: 20px;
     }
 
@@ -53,15 +64,15 @@
         position: relative;
         overflow: hidden;
         border-radius: 14px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.16);
     }
 
     .gallery-item img {
         width: 100%;
-        height: 200px;
+        height: 230px;
         object-fit: cover;
         display: block;
-        transition: 0.35s ease;
+        transition: 0.35s;
     }
 
     .gallery-item:hover img {
@@ -71,7 +82,7 @@
     .overlay {
         position: absolute;
         inset: 0;
-        background: rgba(140, 115, 190, 0.85);
+        background: rgba(125, 95, 170, 0.88); /* tím đậm overlay */
         color: white;
         display: flex;
         align-items: center;
@@ -89,29 +100,38 @@
         opacity: 1;
     }
 
+    /* ===== BUTTON giống CLB Nhảy ===== */
     .btn {
         display: inline-block;
-        padding: 12px 22px;
-        margin-top: 25px;
-        background: #B69AD9;
+        padding: 13px 28px;
+        margin-top: 30px;
+        background: #C0A2EA;
         color: white;
         font-weight: 600;
         text-decoration: none;
         border-radius: 10px;
-        transition: 0.3s;
+        transition: 0.35s;
+        animation: float 2.6s ease-in-out infinite;
     }
 
     .btn:hover {
-        background: #9B82C7;
-        transform: scale(1.05);
+        background: #A98CD9;
+        transform: scale(1.06);
     }
 
+    /* hiệu ứng nổi lên – hạ xuống */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+    }
+
+    /* ===== FOOTER ===== */
     footer {
-        background: #E8D9FF;
+        background: #EAD9FF;
         padding: 15px;
         text-align: center;
         margin-top: 30px;
-        border-top: 3px solid #B69AD9;
+        border-top: 3px solid #C0A2EA;
         color: #5B3E7A;
     }
 </style>
@@ -123,7 +143,8 @@
 <div class="container">
 
     <div class="intro">
-        ✏️ CLB Vẽ là nơi dành cho các bạn trẻ yêu nghệ thuật, thích sáng tạo và muốn khám phá thế giới màu sắc theo cách riêng. Các thành viên sẽ được rèn luyện kỹ năng hội họa, trang trí, làm thủ công và tham gia các dự án nghệ thuật ý nghĩa trong và ngoài trường.
+        ✏️ CLB Vẽ là nơi dành cho các bạn trẻ yêu nghệ thuật, thích sáng tạo và muốn khám phá thế giới màu sắc theo cách riêng.
+        Thành viên được rèn kỹ năng hội họa, trang trí, làm thủ công và tham gia nhiều dự án nghệ thuật trong & ngoài trường.
     </div>
 
     <h2>🎨 Hình ảnh hoạt động</h2>
@@ -132,17 +153,17 @@
 
         <div class="gallery-item">
             <img src="art1.jpg">
-            <div class="overlay">🎨 Tổ chức cuộc thi trang trí tranh bằng sáp màu</div>
+            <div class="overlay">🎨 Cuộc thi trang trí tranh bằng sáp màu</div>
         </div>
 
         <div class="gallery-item">
-            <img src="art2.jpg">
-            <div class="overlay">💌 Dự án trang trí thiệp tặng thầy cô nhân dịp 20/10</div>
+            <img src="art2.png">
+            <div class="overlay">💌 Làm thiệp tặng thầy cô nhân ngày 20/10</div>
         </div>
 
         <div class="gallery-item">
             <img src="art3.jpg">
-            <div class="overlay">✨ Buổi sinh hoạt thường xuyên của CLB</div>
+            <div class="overlay">✨ Buổi sinh hoạt & luyện vẽ định kỳ</div>
         </div>
 
         <div class="gallery-item">
@@ -152,17 +173,17 @@
 
         <div class="gallery-item">
             <img src="art5.jpg">
-            <div class="overlay">🎄 Trang trí một góc tường dịp Giáng Sinh</div>
+            <div class="overlay">🎄 Trang trí không gian Giáng Sinh</div>
         </div>
 
         <div class="gallery-item">
             <img src="art6.jpg">
-            <div class="overlay">🖼️ Một số tác phẩm tranh – phần 1</div>
+            <div class="overlay">🖼️ Tác phẩm tranh </div>
         </div>
 
         <div class="gallery-item">
             <img src="art7.jpg">
-            <div class="overlay">🖼️ Một số tác phẩm tranh – phần 2</div>
+            <div class="overlay">🖼️ Tác phẩm tranh </div>
         </div>
 
     </div>
