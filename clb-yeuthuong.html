@@ -5,29 +5,29 @@
 <title>CLB Vòng Tay Yêu Thương – THPT Phú Mỹ</title>
 
 <style>
-    body { margin: 0; font-family: Poppins, sans-serif; background:#FFF5FA; }
+    body { margin: 0; font-family: Poppins, sans-serif; background:#FFF9FB; }
 
     header {
-        background: #FFD6E8;
+        background: #FFE4EE;
         padding: 25px;
         text-align: center;
         font-size: 32px;
         font-weight: bold;
-        border-bottom: 4px solid #D46A82;
+        border-bottom: 4px solid #D07A8C;
     }
 
     .container { width: 90%; margin: auto; padding: 25px 0; }
 
     .intro {
-        background: #FFB7C5;
+        background: #FFD6E4;
         padding: 20px;
         border-radius: 14px;
-        border: 2px solid #FFD6E8;
+        border: 2px solid #FFE4EE;
         font-size: 18px;
         line-height: 1.6;
     }
 
-    h2 { margin-top: 30px; color: #C45C7A; }
+    h2 { margin-top: 30px; color: #B75C77; }
 
     .gallery {
         display: grid;
@@ -40,13 +40,37 @@
         width:100%; height:200px; object-fit:cover;
         border-radius: 14px;
         box-shadow:0 4px 12px rgba(0,0,0,0.1);
+        transition:0.3s;
+        cursor:pointer;
     }
+    .gallery img:hover { transform: scale(1.05); }
+
+    /* Modal */
+    .modal {
+        display:none;
+        position:fixed;
+        top:0; left:0;
+        width:100%; height:100%;
+        background:rgba(0,0,0,0.5);
+        justify-content:center;
+        align-items:center;
+    }
+    .modal-content {
+        background:white;
+        padding:20px;
+        border-radius:14px;
+        width:90%; max-width:480px;
+        text-align:center;
+        box-shadow:0 4px 15px rgba(0,0,0,0.2);
+        animation:fadeIn 0.3s;
+    }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
 
     .btn {
         display:inline-block;
         margin-top:25px;
         padding:12px 22px;
-        background:#D46A82;
+        background:#D07A8C;
         color:white;
         font-weight:600;
         border-radius:10px;
@@ -54,10 +78,10 @@
     }
 
     footer {
-        background:#FFD6E8;
+        background:#FFE4EE;
         padding:15px;
         text-align:center;
-        border-top:3px solid #D46A82;
+        border-top:3px solid #D07A8C;
         margin-top:30px;
     }
 </style>
@@ -65,29 +89,51 @@
 
 <body>
 
-<header>CLB VÒNG TAY YÊU THƯƠNG - SỨ MỆNH CAO CẢ</header>
+<header>CLB VÒNG TAY YÊU THƯƠNG - SỨ MỆNH LAN TỎA YÊU THƯƠNG</header>
 
 <div class="container">
 
     <div class="intro">
-        CLB Vòng Tay Yêu Thương mang sứ mệnh lan tỏa tinh thần nhân ái và sự sẻ chia đến với mọi học sinh qua những hoạt động thiện nguyện như phát cơm từ thiện, thăm quan các mái ấm, tổ chức gây quỹ,.... Không chỉ giúp học sinh nâng cao lòng trắc ẩn và quan tâm, CLB còn là nơi giúp phát triển tinh thần trách nhiệm và kỹ năng làm việc nhóm.
+        CLB Vòng Tay Yêu Thương mang sứ mệnh lan tỏa tinh thần nhân ái thông qua nhiều hoạt động thiện nguyện như phát cơm, thăm mái ấm, tổ chức gây quỹ và giúp đỡ những hoàn cảnh khó khăn. Đây là môi trường để học sinh nuôi dưỡng lòng trắc ẩn và phát triển kỹ năng sống.
     </div>
 
     <h2>📸 Hình ảnh hoạt động</h2>
 
     <div class="gallery">
-        <img src="485892043_1054479053387347_3617181476881383689_n.jpg">
-        <img src="532164370_1169605868541331_8008406378760612212_n.jpg">
-        <img src="560538832_1193479026133579_2390091233806725188_n.jpg">
+        <img src="vtyt1.jpg" data-desc="Hợp tác cùng OCB làm gian hàng 0đ – hỗ trợ người khó khăn.">
+        <img src="vtyt2.jpg" data-desc="Đến thăm, tặng quà và dạy học cho các em nhỏ tại mái ấm Phúc Lâm.">
+        <img src="vtyt3.jpg" data-desc="Thăm chùa và cùng chuẩn bị các phần ăn cho người khó khăn.">
+        <img src="vtyt4.jpg" data-desc="Tự tay phát cơm từ thiện cho người khó khăn tại khu vực Phú Mỹ.">
+        <img src="vtyt5.jpg" data-desc="Hỗ trợ trường THCS Lê Hồng Phong vẽ tranh tường cổ động lối sống đẹp.">
     </div>
 
     <a class="btn" href="https://www.facebook.com/CLBVongTayYeuThuong?locale=vi_VN" target="_blank">📌 Đăng ký tham gia</a>
     <br><br>
-    <a class="btn" style="background:#C45C7A" href="index.html">⬅ Quay về trang chính</a>
+    <a class="btn" style="background:#B75C77" href="index.html">⬅ Quay về trang chính</a>
 
 </div>
 
 <footer>© CLB Vòng Tay Yêu Thương – THPT Phú Mỹ</footer>
+
+<!-- Modal -->
+<div class="modal" id="imgModal">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+    const images = document.querySelectorAll('.gallery img');
+    const modal = document.getElementById('imgModal');
+    const modalContent = document.getElementById('modalContent');
+
+    images.forEach(img => {
+        img.onclick = () => {
+            modal.style.display = 'flex';
+            modalContent.textContent = img.getAttribute('data-desc');
+        };
+    });
+
+    modal.onclick = () => modal.style.display = 'none';
+</script>
 
 </body>
 </html>
