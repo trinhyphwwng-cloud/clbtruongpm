@@ -5,84 +5,181 @@
 <title>CLB Bóng Rổ – THPT Phú Mỹ</title>
 
 <style>
-    body { margin:0; background:#F4FFF4; font-family:Poppins, sans-serif; }
-
-    header {
-        background:#D6F8D6;
-        padding:25px;
-        text-align:center;
-        font-size:32px;
-        font-weight:700;
-        border-bottom:4px solid #6EB86E;
+    body {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        background: #F4FFF4; 
     }
 
-    .container { width:90%; margin:auto; padding:25px 0; }
+    /* HEADER có hiệu ứng */
+    header {
+        background: #D6F8D6;
+        padding: 25px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        border-bottom: 4px solid #6EB86E;
+        color: #2D6F2D;
+        animation: glow 2.8s ease-in-out infinite alternate;
+    }
 
+    @keyframes glow {
+        from { box-shadow: 0 0 8px #CFF6CF; }
+        to   { box-shadow: 0 0 22px #E7FFE7; }
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+        padding: 25px 0;
+    }
+
+    /* INTRO – đậm hơn nền */
     .intro {
-        background:#FFF5CC;
-        border-radius:14px;
-        padding:20px;
-        border:2px solid #D6F8D6;
+        background: #E8FFE8;
+        border-radius: 14px;
+        padding: 20px;
+        border: 3px solid #D6F8D6;
         font-size: 18px;
         line-height: 1.6;
+        color: #2D6F2D;
     }
 
-    h2 { margin-top:30px; color:#4D8C4D; }
+    h2 {
+        margin-top: 35px;
+        color: #4D8C4D;
+    }
 
+    /* GALLERY */
     .gallery {
-        margin-top:15px;
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-        gap:20px;
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
     }
 
-    .gallery img {
-        width:100%; height:200px; border-radius:14px;
-        object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
+    .gallery-item img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
+        transition: 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(77, 140, 77, 0.85); 
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+        opacity: 0;
+        transition: 0.35s ease;
+        line-height: 1.5;
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+
+    /* BUTTON */
     .btn {
-        display:inline-block;
-        padding:12px 22px;
-        margin-top:25px;
-        background:#6EB86E;
-        color:white;
-        border-radius:10px;
-        font-weight:600;
-        text-decoration:none;
+        display: inline-block;
+        padding: 13px 28px;
+        margin-top: 30px;
+        background: #6EB86E;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: 0.35s;
+        animation: float 2.6s ease-in-out infinite;
+    }
+
+    .btn:hover {
+        background: #5DA55D;
+        transform: scale(1.06);
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
     }
 
     footer {
-        background:#D6F8D6;
-        padding:15px;
-        text-align:center;
-        border-top:3px solid #6EB86E;
-        margin-top:30px;
+        background: #D6F8D6;
+        padding: 15px;
+        text-align: center;
+        border-top: 3px solid #6EB86E;
+        margin-top: 30px;
+        color: #2D6F2D;
     }
 </style>
 </head>
 
 <body>
 
-<header>CLB BÓNG RỔ - RỰC LỬA ĐAM MÊ</header>
+<header>CLB BÓNG RỔ – RỰC LỬA ĐAM MÊ</header>
 
 <div class="container">
 
     <div class="intro">
-        CLB Bóng Rổ là điểm đến lý tưởng cho những bạn yêu thể thao và thích vận động. Với tinh thần nhiệt huyết và gắn kết, CLB tạo ra môi trường để các thành viên rèn luyện thể lực, kỹ thuật cá nhân và khả năng phối hợp nhóm. Bên cạnh các buổi tập thường xuyên, CLB còn tham gia giao lưu thi đấu với các trường bạn, tạo cơ hội để học hỏi và thử thách bản thân.
+        🏀 CLB Bóng Rổ là nơi dành cho những bạn trẻ yêu thích thể thao và tinh thần đồng đội.  
+        Tại đây, các thành viên được rèn luyện kỹ thuật cá nhân, phối hợp nhóm và phát triển thể lực toàn diện.  
+        Ngoài các buổi tập thường xuyên, CLB còn tích cực tham gia giao lưu, thi đấu với các trường bạn –  
+        tạo cơ hội cọ xát, học hỏi và khẳng định bản thân trên sân đấu.
     </div>
 
     <h2>📸 Hình ảnh hoạt động</h2>
 
     <div class="gallery">
-        <img src="473647792_122168177030267300_7544627152928592581_n.jpg">
-        <img src="482052374_122173898054267300_5448342115684147822_n.jpg">
-        <img src="483099712_122176269620267300_5987808566389348855_n.jpg">
+
+        <div class="gallery-item">
+            <img src="ball1.jpg">
+            <div class="overlay">🔥 Tham gia giải đấu Bóng rổ 5x5 cụm các trường THPT Bà Rịa - Vũng Tàu </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="ball2.jpg">
+            <div class="overlay">🏀 Tham gia đấu giao hữu với trường THPT Bà </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="ball3.png">
+            <div class="overlay">💪 Tham gia đấu giao hữu với trường THPT Trần Văn Quan </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="ball4.jpg">
+            <div class="overlay">⛹️‍♂️ Tham gia các giải đấu tự do trong tỉnh Bà Rịa - Vũng Tàu </div>
+        </div>
+          <div class="gallery-item">
+            <img src="ball5.g">
+            <div class="overlay">🙋‍♂️ Tổ chức luyện tập, rèn luyện kĩ năng bóng rổ cho các thành viên </div>
+        </div>
         
     </div>
 
-    <a class="btn" href="https://www.facebook.com/profile.php?id=61558019012641&locale=vi_VN" target="_blank">📌 Đăng ký tham gia</a>
+    <a class="btn" href="https://www.facebook.com/profile.php?id=61558019012641&locale=vi_VN" target="_blank">
+        📌 Đăng ký tham gia
+    </a>
     <br><br>
+
     <a class="btn" style="background:#4D8C4D" href="index.html">⬅ Quay về trang chính</a>
 
 </div>
