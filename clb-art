@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>CLB Vẽ – THPT Phú Mỹ</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        background: #F6F0FF; /* tím pastel rất nhạt */
+    }
+
+    header {
+        background: #E8D9FF;
+        padding: 25px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        border-bottom: 4px solid #B69AD9;
+        color: #6A4E93;
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+        padding: 25px 0;
+    }
+
+    .intro {
+        background: #F1E6FF;
+        padding: 20px;
+        border-radius: 14px;
+        border: 2px solid #E8D9FF;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #5A3D7A;
+    }
+
+    h2 {
+        margin-top: 35px;
+        color: #6A4E93;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        transition: 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(140, 115, 190, 0.85);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+        line-height: 1.5;
+        opacity: 0;
+        transition: 0.35s ease;
+    }
+
+    .gallery-item:hover .overlay,
+    .gallery-item:active .overlay {
+        opacity: 1;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 22px;
+        margin-top: 25px;
+        background: #B69AD9;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #9B82C7;
+        transform: scale(1.05);
+    }
+
+    footer {
+        background: #E8D9FF;
+        padding: 15px;
+        text-align: center;
+        margin-top: 30px;
+        border-top: 3px solid #B69AD9;
+        color: #5B3E7A;
+    }
+</style>
+</head>
+<body>
+
+<header>CLB VẼ – SÁNG TẠO, TỎA SẮC MÀU</header>
+
+<div class="container">
+
+    <div class="intro">
+        ✏️ CLB Vẽ là nơi dành cho các bạn trẻ yêu nghệ thuật, thích sáng tạo và muốn khám phá thế giới màu sắc theo cách riêng. Các thành viên sẽ được rèn luyện kỹ năng hội họa, trang trí, làm thủ công và tham gia các dự án nghệ thuật ý nghĩa trong và ngoài trường.
+    </div>
+
+    <h2>🎨 Hình ảnh hoạt động</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="art1.jpg">
+            <div class="overlay">🎨 Tổ chức cuộc thi trang trí tranh bằng sáp màu</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="art2.jpg">
+            <div class="overlay">💌 Dự án trang trí thiệp tặng thầy cô nhân dịp 20/10</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="art3.jpg">
+            <div class="overlay">✨ Buổi sinh hoạt thường xuyên của CLB</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="art4.jpg">
+            <div class="overlay">🕯️ Workshop Mộc Hương – làm nến thơm</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="art5.jpg">
+            <div class="overlay">🎄 Trang trí một góc tường dịp Giáng Sinh</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="art6.jpg">
+            <div class="overlay">🖼️ Một số tác phẩm tranh – phần 1</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="art7.jpg">
+            <div class="overlay">🖼️ Một số tác phẩm tranh – phần 2</div>
+        </div>
+
+    </div>
+
+    <a class="btn" href="index.html">⬅ Quay về trang chính</a>
+
+</div>
+
+<footer>© CLB Vẽ – THPT Phú Mỹ</footer>
+
+</body>
+</html>
