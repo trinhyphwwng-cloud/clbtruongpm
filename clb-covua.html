@@ -5,85 +5,181 @@
 <title>CLB Cờ Vua – THPT Phú Mỹ</title>
 
 <style>
-    body { margin:0; background:#F4F8FF; font-family:Poppins, sans-serif; }
+    body {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        background: #F4F8FF;
+    }
 
+    /* HEADER có hiệu ứng phát sáng */
     header {
-        background:#D9E7FF;
-        padding:25px;
-        text-align:center;
-        font-size:32px;
-        font-weight:700;
-        border-bottom:4px solid #88A9E5;
+        background: #D9E7FF;
+        padding: 25px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        color: #4A67A3;
+        border-bottom: 4px solid #88A9E5;
+        animation: glow 3s ease-in-out infinite alternate;
     }
 
-    .container { width:90%; margin:auto; padding:25px 0; }
+    @keyframes glow {
+        from { box-shadow: 0 0 6px #D9E7FF; }
+        to   { box-shadow: 0 0 20px #EEF4FF; }
+    }
 
+    .container {
+        width: 90%;
+        margin: auto;
+        padding: 25px 0;
+    }
+
+    /* INTRO – đậm hơn nền */
     .intro {
-        background:#E6F0FF;
-        padding:20px;
-        border-radius:14px;
-        border:2px solid #D9E7FF;
-        font-size:18px;
-        line-height:1.6;
+        background: #E6F0FF;
+        border-radius: 14px;
+        padding: 20px;
+        border: 3px solid #D9E7FF;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #4A67A3;
     }
 
-    h2 { margin-top:30px; color:#5F7FB3; }
+    h2 {
+        margin-top: 35px;
+        color: #5F7FB3;
+    }
 
+    /* GALLERY ĐỒNG BỘ STYLE */
     .gallery {
-        margin-top:15px;
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-        gap:20px;
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
     }
 
-    .gallery img {
-        width:100%; height:200px; border-radius:14px;
-        object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
+    .gallery-item img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
+        transition: 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(95, 127, 179, 0.85);
+        color: white;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+        line-height: 1.5;
+        font-size: 16px;
+        transition: 0.35s ease;
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+
+    /* BUTTON – nổi nhẹ */
     .btn {
-        display:inline-block;
-        padding:12px 22px;
-        background:#88A9E5;
-        color:white;
-        margin-top:25px;
-        border-radius:10px;
-        text-decoration:none;
-        font-weight:600;
+        display: inline-block;
+        padding: 13px 28px;
+        background: #88A9E5;
+        color: white;
+        font-weight: 600;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 30px;
+        transition: 0.3s;
+        animation: float 2.5s ease-in-out infinite;
+    }
+
+    .btn:hover {
+        background: #7697D6;
+        transform: scale(1.06);
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
     }
 
     footer {
-        background:#D9E7FF;
-        padding:15px;
-        text-align:center;
-        border-top:3px solid #88A9E5;
-        margin-top:30px;
+        background: #D9E7FF;
+        padding: 15px;
+        text-align: center;
+        border-top: 3px solid #88A9E5;
+        margin-top: 30px;
+        color: #4A67A3;
     }
 </style>
 </head>
 
 <body>
 
-<header>CLB CỜ VUA - TRÍ TUỆ, BẢN LĨNH, KIÊN NHẪN</header>
+<header>CLB CỜ VUA – TRÍ TUỆ • BẢN LĨNH • KIÊN NHẪN</header>
 
 <div class="container">
 
     <div class="intro">
-        CLB Cờ Vua không chỉ là sân chơi cho những chiếc não thích suy nghĩ mà còn là nơi phát triển tư duy, chiến thuật và khả năng tập trung của học sinh. Tham gia CLB, bạn sẽ được rèn luyện kỹ năng quan sát, tính toán, lập kế hoạch và tham gia các giải đấu hấp dẫn.
+        ♟️ CLB Cờ Vua là nơi dành cho những bạn yêu thích tư duy chiến thuật và suy luận logic.  
+        Tại đây, các thành viên được rèn luyện khả năng tập trung, phán đoán, lập kế hoạch và thi đấu qua nhiều ván cờ thực tế.  
+        CLB thường xuyên tham gia hội thao, giải đấu cấp trường – cấp phường, mang lại sân chơi trí tuệ đầy bổ ích.
     </div>
 
     <h2>📸 Hình ảnh hoạt động</h2>
 
     <div class="gallery">
-        <img src="chess1.jpg" alt="Học sinh thi đấu môn cờ vua tại hội thao THPT Phú Mỹ">
-        <img src="chess2.jpg" alt="Học sinh thi đấu môn cờ vua tại hội thao THPT Phú Mỹ">
-        <img src="chess3.jpg" alt="Học sinh thi đấu môn cờ vua tại hội thao THPT Phú Mỹ">
-        <img src="chess4.jpg" alt="Thành viên CLB thi đấu cờ vua tại Đại hội TDTT phường Phú Mỹ">
-        <img src="chess5.jpg" alt="Sinh hoạt và giao lưu cờ vua của CLB">
+
+        <div class="gallery-item">
+            <img src="chess1.jpg">
+            <div class="overlay">♟️ Các bạn học sinh thi đấu môn cờ vua tại Hội thao THPT Phú Mỹ</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="chess2.jpg">
+            <div class="overlay">🎯 Các bạn học sinh thi đấu môn cờ vua tại Hội thao THPT Phú Mỹ</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="chess3.jpg">
+            <div class="overlay">🧠 Các bạn học sinh thi đấu môn cờ vua tại Hội thao THPT Phú Mỹ</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="chess4.jpg">
+            <div class="overlay">🏅 Thành viên CLB thi đấu cờ vua tại Đại hội TDTT phường Phú Mỹ</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="chess5.jpg">
+            <div class="overlay">🤝 Giao lưu cờ vua – rèn luyện kỹ năng</div>
+        </div>
+
     </div>
 
-    <a class="btn" href="https://www.facebook.com/profile.php?id=61564657288739" target="_blank">📌 Đăng ký tham gia</a>
+    <a class="btn" href="https://www.facebook.com/profile.php?id=61564657288739" target="_blank">
+        📌 Đăng ký tham gia
+    </a>
     <br><br>
+
     <a class="btn" style="background:#5F7FB3" href="index.html">⬅ Quay về trang chính</a>
 
 </div>
